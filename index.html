@@ -1,0 +1,1388 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>新井製作所 | 金属加工・板金・溶接・組立 一貫対応</title>
+  <meta name="description" content="京都府久世郡久御山町の金属加工会社。機械加工・板金・溶接・電装・組立まで1社で対応。小ロット・試作・特急にも対応します。創業40年以上。">
+  <style>
+    /* ===== リセット & 基本設定 ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --color-bg: #1a1a1e;
+      --color-surface: #22232a;
+      --color-surface2: #2a2b35;
+      --color-accent: #c8a84b;
+      --color-accent2: #9b7d34;
+      --color-text: #e8e8e8;
+      --color-text-sub: #a0a0a8;
+      --color-border: #3a3b45;
+      --font-main: 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      font-family: var(--font-main);
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    img { display: block; max-width: 100%; height: auto; }
+
+    /* ===== ナビゲーション ===== */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(26, 26, 30, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--color-border);
+      padding: 0 24px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: var(--color-accent);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--color-text-sub);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--color-accent); }
+
+    .nav-cta {
+      background: var(--color-accent);
+      color: #1a1a1e !important;
+      padding: 8px 18px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .nav-cta:hover { background: #e0c060 !important; }
+
+    /* ===== ヒーローセクション ===== */
+    .hero {
+      min-height: 100vh;
+      padding-top: 60px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(rgba(0,0,0,0.60), rgba(0,0,0,0.60)), url('ホームページ/画像/DJI_20260318130624_0281_D.JPG') center/cover no-repeat;
+    }
+
+    /* 金属グリッド背景パターン */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(200,168,75,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(200,168,75,0.06) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 80px 24px;
+    }
+
+    .hero-label {
+      display: inline-block;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      color: var(--color-accent);
+      border: 1px solid var(--color-accent);
+      padding: 4px 14px;
+      border-radius: 2px;
+      margin-bottom: 28px;
+      text-transform: uppercase;
+    }
+
+    .hero-title {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 800;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      margin-bottom: 28px;
+    }
+
+    .hero-title .accent { color: var(--color-accent); }
+
+    .hero-subtitle {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      color: var(--color-text-sub);
+      max-width: 560px;
+      margin-bottom: 48px;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 52px;
+    }
+
+    .badge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 4px;
+      padding: 8px 16px;
+      font-size: 0.875rem;
+      color: var(--color-text);
+    }
+
+    .badge-icon {
+      color: var(--color-accent);
+      font-style: normal;
+      font-size: 1rem;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .btn-primary {
+      background: var(--color-accent);
+      color: #1a1a1e;
+      text-decoration: none;
+      padding: 16px 36px;
+      font-size: 1rem;
+      font-weight: 700;
+      border-radius: 4px;
+      display: inline-block;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .btn-primary:hover {
+      background: #e0c060;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border: 1px solid var(--color-text-sub);
+      color: var(--color-text);
+      text-decoration: none;
+      padding: 15px 32px;
+      font-size: 0.95rem;
+      border-radius: 4px;
+      display: inline-block;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--color-accent);
+      color: var(--color-accent);
+    }
+
+    /* ===== 実績バー ===== */
+    .stats-bar {
+      background: var(--color-surface);
+      border-top: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .stats-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 40px 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0;
+      justify-content: space-around;
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 12px 24px;
+    }
+
+    .stat-num {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--color-accent);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--color-text-sub);
+      letter-spacing: 0.05em;
+    }
+
+    /* ===== 共通セクション ===== */
+    section {
+      padding: 100px 24px;
+    }
+
+    .section-inner {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      color: var(--color-accent);
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .section-title {
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 700;
+      margin-bottom: 16px;
+      line-height: 1.3;
+    }
+
+    .section-desc {
+      color: var(--color-text-sub);
+      max-width: 600px;
+      margin-bottom: 60px;
+      font-size: 1rem;
+    }
+
+    /* ===== 強みセクション ===== */
+    #strengths {
+      background: var(--color-bg);
+    }
+
+    .strengths-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .strength-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 6px;
+      padding: 32px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .strength-card:hover {
+      border-color: var(--color-accent2);
+      transform: translateY(-4px);
+    }
+
+    .strength-num {
+      font-size: 0.75rem;
+      color: var(--color-accent);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      margin-bottom: 16px;
+    }
+
+    .strength-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+
+    .strength-body {
+      font-size: 0.9rem;
+      color: var(--color-text-sub);
+      line-height: 1.8;
+    }
+
+    /* ===== 事業内容セクション ===== */
+    #services {
+      background: var(--color-surface);
+    }
+
+    .services-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .service-item {
+      background: var(--color-surface2);
+      border-radius: 6px;
+      padding: 28px 24px;
+      border-left: 3px solid var(--color-accent);
+    }
+
+    .service-icon {
+      font-size: 1.8rem;
+      margin-bottom: 14px;
+    }
+
+    .service-name {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .service-body {
+      font-size: 0.85rem;
+      color: var(--color-text-sub);
+      line-height: 1.75;
+    }
+
+    /* ===== 対応領域（フロー） ===== */
+    .flow-section {
+      background: var(--color-bg);
+      padding: 80px 24px;
+    }
+
+    .flow-wrapper { overflow-x: auto; padding-bottom: 8px; }
+    .flow-inner {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .flow-steps {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 0;
+      align-items: center;
+      justify-content: center;
+      margin-top: 48px;
+    }
+
+    .flow-step {
+      text-align: center;
+      padding: 20px 28px;
+    }
+
+    .flow-step-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: var(--color-surface);
+      border: 2px solid var(--color-accent2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin: 0 auto 12px;
+    }
+
+    .flow-step-label {
+      font-size: 0.875rem;
+      font-weight: 700;
+    }
+
+    .flow-arrow {
+      color: var(--color-accent);
+      font-size: 1.5rem;
+      padding: 0 8px;
+    }
+
+    .flow-note {
+      text-align: center;
+      margin-top: 32px;
+      font-size: 0.9rem;
+      color: var(--color-accent);
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      display: inline-block;
+      padding: 10px 28px;
+      border-radius: 4px;
+      display: block;
+      max-width: 560px;
+      margin: 32px auto 0;
+    }
+
+    /* ===== 実績紹介 ===== */
+    #cases {
+      background: var(--color-surface);
+    }
+
+    .cases-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .case-card {
+      background: var(--color-surface2);
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid var(--color-border);
+    }
+
+    .case-img-placeholder {
+      height: 180px;
+      background: linear-gradient(135deg, #2a2b35, #35363f);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      color: var(--color-border);
+      overflow: hidden;
+    }
+    .case-img-placeholder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .case-content {
+      padding: 24px;
+    }
+
+    .case-tag {
+      font-size: 0.72rem;
+      color: var(--color-accent);
+      border: 1px solid var(--color-accent2);
+      padding: 2px 10px;
+      border-radius: 2px;
+      display: inline-block;
+      margin-bottom: 12px;
+      letter-spacing: 0.08em;
+    }
+
+    .case-title {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .case-body {
+      font-size: 0.85rem;
+      color: var(--color-text-sub);
+      line-height: 1.75;
+    }
+
+    /* ===== 社長メッセージ ===== */
+    #message {
+      background: var(--color-bg);
+    }
+
+    .message-wrap {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .message-photo {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 6px;
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      color: var(--color-border);
+      flex-direction: column;
+      gap: 12px;
+    }
+    .message-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    .message-photo span {
+      font-size: 0.75rem;
+      color: var(--color-text-sub);
+    }
+
+    .message-body p {
+      color: var(--color-text-sub);
+      font-size: 1rem;
+      line-height: 2;
+      margin-bottom: 20px;
+    }
+
+    .message-sig {
+      margin-top: 32px;
+      border-top: 1px solid var(--color-border);
+      padding-top: 20px;
+    }
+
+    .message-sig .company {
+      font-size: 0.85rem;
+      color: var(--color-text-sub);
+      margin-bottom: 4px;
+    }
+
+    .message-sig .name {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--color-text);
+    }
+
+    /* ===== 会社概要 ===== */
+    #company {
+      background: var(--color-surface);
+    }
+
+    .company-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+    }
+
+    .company-table tr {
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .company-table th {
+      width: 180px;
+      padding: 18px 0;
+      color: var(--color-text-sub);
+      font-weight: 600;
+      text-align: left;
+      vertical-align: top;
+      padding-right: 24px;
+    }
+
+    .company-table td {
+      padding: 18px 0;
+      color: var(--color-text);
+      line-height: 1.75;
+    }
+
+    .company-table .accent-text {
+      color: var(--color-accent);
+      font-weight: 700;
+    }
+
+    /* ===== お問い合わせ ===== */
+    #contact {
+      background: var(--color-surface2);
+      padding: 100px 24px;
+    }
+
+    .contact-inner {
+      max-width: 680px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .contact-inner .section-desc {
+      margin: 0 auto 48px;
+    }
+
+    .contact-form {
+      text-align: left;
+    }
+
+    .form-row {
+      margin-bottom: 24px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--color-text-sub);
+      margin-bottom: 8px;
+    }
+
+    .form-label .required {
+      color: var(--color-accent);
+      margin-left: 4px;
+      font-size: 0.75rem;
+    }
+
+    .form-input, .form-textarea {
+      width: 100%;
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: 4px;
+      padding: 14px 16px;
+      color: var(--color-text);
+      font-size: 1rem;
+      font-family: var(--font-main);
+      transition: border-color 0.2s;
+      outline: none;
+    }
+
+    .form-input:focus, .form-textarea:focus {
+      border-color: var(--color-accent);
+    }
+
+    .form-textarea {
+      height: 160px;
+      resize: vertical;
+    }
+
+    .form-submit {
+      width: 100%;
+      background: var(--color-accent);
+      color: #1a1a1e;
+      border: none;
+      padding: 18px;
+      font-size: 1rem;
+      font-weight: 700;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.2s;
+      font-family: var(--font-main);
+    }
+
+    .form-submit:hover {
+      background: #e0c060;
+    }
+
+    .contact-note {
+      font-size: 0.8rem;
+      color: var(--color-text-sub);
+      margin-top: 16px;
+      text-align: center;
+    }
+
+    /* ===== フッター ===== */
+    footer {
+      background: #111113;
+      padding: 40px 24px;
+      text-align: center;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .footer-logo {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      margin-bottom: 8px;
+    }
+
+    .footer-copy {
+      font-size: 0.8rem;
+      color: var(--color-text-sub);
+    }
+
+    /* ===== レスポンシブ ===== */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+
+      section { padding: 72px 20px; }
+
+      .stats-inner {
+        gap: 24px;
+      }
+
+      .stat-item { flex: 1 0 45%; }
+
+      .message-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .message-photo { aspect-ratio: auto; height: 200px; }
+
+      .flow-steps {
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+      }
+
+      .flow-arrow {
+        transform: rotate(90deg);
+        display: block;
+      }
+
+      .company-table th {
+        width: 120px;
+        font-size: 0.85rem;
+      }
+    }
+
+    /* ===== 設備一覧 ===== */
+    #equipment {
+      background: var(--color-bg);
+    }
+
+    .equipment-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 28px;
+    }
+
+    .equipment-category {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 6px;
+      padding: 28px 32px;
+    }
+
+    .equipment-cat-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--color-border);
+      letter-spacing: 0.05em;
+    }
+
+    .equipment-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+    }
+
+    .equipment-table tr {
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .equipment-table tr:last-child {
+      border-bottom: none;
+    }
+
+    .equipment-table td {
+      padding: 10px 8px;
+      color: var(--color-text);
+      vertical-align: top;
+    }
+
+    .equipment-table td:first-child {
+      font-weight: 600;
+      width: 120px;
+    }
+
+    .equipment-table td:last-child {
+      width: 60px;
+      text-align: right;
+      color: var(--color-text-sub);
+    }
+
+    @media (max-width: 768px) {
+      .equipment-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ===== スクロールアニメーション（軽量版） ===== */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ナビゲーション -->
+  <nav class="nav">
+    <a href="#" class="nav-logo">新井製作所</a>
+    <ul class="nav-links">
+      <li><a href="#strengths">強み</a></li>
+      <li><a href="#services">事業内容</a></li>
+      <li><a href="#equipment">設備</a></li>
+      <li><a href="#cases">実績</a></li>
+      <li><a href="#company">会社概要</a></li>
+      <li><a href="#contact" class="nav-cta">お問い合わせ</a></li>
+    </ul>
+  </nav>
+
+  <!-- ヒーロー -->
+  <section class="hero" id="top">
+    <div class="hero-inner">
+      <span class="hero-label">Arai Manufacturing</span>
+      <h1 class="hero-title">
+        機械加工・板金・溶接・組立まで<br>
+        <span class="accent">1社でまとめて対応します</span>
+      </h1>
+      <p class="hero-subtitle">
+        京都府久御山町の金属加工会社。創業40年以上。<br>
+        小ロット・試作・特急にも対応しています。
+      </p>
+
+      <div class="hero-badges">
+        <div class="badge"><em class="badge-icon">✔</em> 機械加工（旋盤・フライス）</div>
+        <div class="badge"><em class="badge-icon">✔</em> 板金・レーザー加工</div>
+        <div class="badge"><em class="badge-icon">✔</em> 溶接</div>
+        <div class="badge"><em class="badge-icon">✔</em> 電装・配線</div>
+        <div class="badge"><em class="badge-icon">✔</em> 組立・設置</div>
+        <div class="badge"><em class="badge-icon">✔</em> 1個〜小ロット対応</div>
+      </div>
+
+      <div class="hero-cta-group">
+        <a href="#contact" class="btn-primary">お問い合わせ・見積依頼</a>
+        <a href="#strengths" class="btn-outline">強みを見る</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 実績数値バー -->
+  <div class="stats-bar">
+    <div class="stats-inner">
+      <div class="stat-item fade-up">
+        <div class="stat-num">40<span style="font-size:1.2rem">年</span></div>
+        <div class="stat-label">創業からの年数</div>
+      </div>
+      <div class="stat-item fade-up">
+        <div class="stat-num">5</div>
+        <div class="stat-label">対応工程（加工〜設置）</div>
+      </div>
+      <div class="stat-item fade-up">
+        <div class="stat-num">1<span style="font-size:1.2rem">個〜</span></div>
+        <div class="stat-label">小ロット対応</div>
+      </div>
+      <div class="stat-item fade-up">
+        <div class="stat-num">7<span style="font-size:1.2rem">割</span></div>
+        <div class="stat-label">リピート受注比率</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 強み -->
+  <section id="strengths">
+    <div class="section-inner">
+      <span class="section-label">Strengths</span>
+      <h2 class="section-title">新井製作所の強み</h2>
+      <p class="section-desc">
+        「機械加工はできるが溶接はできない」「小ロットは断られる」——そういった問題を、弊社ではまとめて解決できます。
+      </p>
+
+      <div class="strengths-grid">
+
+        <div class="strength-card fade-up">
+          <div class="strength-num">01</div>
+          <h3 class="strength-title">機械加工・板金・溶接・組立を<br>1社で完結</h3>
+          <p class="strength-body">
+            通常は複数社に外注が必要な工程を、弊社1社でまかなえます。外注を減らすことで、コストを抑えて納期を短くできます。機械加工のあとに溶接が必要な製品も、別の会社に送ることなく対応します。
+          </p>
+        </div>
+
+        <div class="strength-card fade-up">
+          <div class="strength-num">02</div>
+          <h3 class="strength-title">1個からの小ロット・<br>試作・特急に対応</h3>
+          <p class="strength-body">
+            「とりあえず1個だけ作りたい」「図面はあるが試作を急ぎで頼みたい」という依頼にも対応しています。小規模な会社だからこそ、優先順位の調整がしやすく、急な依頼にも動けます。
+          </p>
+        </div>
+
+        <div class="strength-card fade-up">
+          <div class="strength-num">03</div>
+          <h3 class="strength-title">製作から現場への設置まで<br>一貫して対応</h3>
+          <p class="strength-body">
+            部品を作って納品するだけでなく、現場への搬入・設置まで対応できます。「作った後の設置業者を別に探さなければならない」という手間が省けます。設備の修理・更新案件もご相談ください。
+          </p>
+        </div>
+
+        <div class="strength-card fade-up">
+          <div class="strength-num">04</div>
+          <h3 class="strength-title">大手製造業・精密機器メーカーとの<br>継続的な取引実績</h3>
+          <p class="strength-body">
+            高速機械部品や精密計測機器向け部品など、品質基準の厳しい取引先との継続受注実績があります。図面通りに正確に作ることへの信頼を、長年の取引で積み上げてきました。
+          </p>
+        </div>
+
+        <div class="strength-card fade-up">
+          <div class="strength-num">05</div>
+          <h3 class="strength-title">電気窯の設計・製造・電装まで<br>すべて自社で対応</h3>
+          <p class="strength-body">
+            陶芸用電気窯のOEM製造を手がけています。筐体の板金・溶接から、温度制御の配線・組み立てまで一貫対応。ニデックドライブテクノロジー（株）（旧 日本電産シンポ（株））との長年の取引実績があります。
+          </p>
+        </div>
+
+        <div class="strength-card fade-up">
+          <div class="strength-num">06</div>
+          <h3 class="strength-title">創業40年以上の<br>技術と信頼</h3>
+          <p class="strength-body">
+            昭和61年に法人登記し、それ以前からの事業を含めると40年以上の実績があります。プレス・金型から始まり、自動車部品、繊維機械、陶芸窯と、時代に合わせて技術領域を広げてきました。
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 対応工程フロー -->
+  <div class="flow-section">
+    <div class="flow-inner">
+      <span class="section-label" style="display:block">Process</span>
+      <h2 class="section-title">製作から設置までの一貫対応</h2>
+      <p class="section-desc">
+        加工の各工程を複数社に分けて外注する必要がなく、窓口を1社にまとめられます。
+      </p>
+      <div class="flow-wrapper"><div class="flow-steps">
+        <div class="flow-step fade-up">
+          <div class="flow-step-icon">📐</div>
+          <div class="flow-step-label">図面確認<br>見積</div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step fade-up">
+          <div class="flow-step-icon">⚙️</div>
+          <div class="flow-step-label">機械加工<br>（旋盤・フライス）</div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step fade-up">
+          <div class="flow-step-icon">🔩</div>
+          <div class="flow-step-label">板金・<br>レーザー加工</div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step fade-up">
+          <div class="flow-step-icon">🔧</div>
+          <div class="flow-step-label">溶接</div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step fade-up">
+          <div class="flow-step-icon">🔌</div>
+          <div class="flow-step-label">電装・<br>組立</div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step fade-up">
+          <div class="flow-step-icon">🏭</div>
+          <div class="flow-step-label">現場<br>設置</div>
+        </div></div>
+      <p class="flow-note">
+        ※ すべての工程に対応しているため、工程に応じてご相談ください。
+      </p>
+    </div>
+  </div>
+
+  <!-- 事業内容 -->
+  <section id="services">
+    <div class="section-inner">
+      <span class="section-label">Services</span>
+      <h2 class="section-title">事業内容</h2>
+      <p class="section-desc">
+        金属加工を中心に、電装・組立・設置まで幅広く対応しています。
+      </p>
+
+      <div class="services-list">
+
+        <div class="service-item fade-up">
+          <div class="service-icon">⚙️</div>
+          <h3 class="service-name">機械加工</h3>
+          <p class="service-body">
+            汎用旋盤・対話式フライスによる切削加工。
+            精度の求められる部品を1個から対応します。
+            高速機械向けの精密部品の加工実績があります。
+          </p>
+        </div>
+
+        <div class="service-item fade-up">
+          <div class="service-icon">✂️</div>
+          <h3 class="service-name">板金・レーザー加工</h3>
+          <p class="service-body">
+            レーザーによる切断から、曲げ・溶接まで対応。
+            大型の曲げ加工は協力工場ネットワークを活用し、
+            幅広いサイズに対応できます。
+          </p>
+        </div>
+
+        <div class="service-item fade-up">
+          <div class="service-icon">🔥</div>
+          <h3 class="service-name">溶接</h3>
+          <p class="service-body">
+            TIG・MIGなどの各種溶接に対応。
+            機械加工と組み合わせた製品の溶接も、
+            工程をまたいでそのまま対応します。
+          </p>
+        </div>
+
+        <div class="service-item fade-up">
+          <div class="service-icon">🔌</div>
+          <h3 class="service-name">電装・配線</h3>
+          <p class="service-body">
+            電気窯の温度制御・タイマー配線など、
+            製品に必要な電装工事に対応。
+            ※ 高圧・専門資格が必要な工事は対応外です。
+          </p>
+        </div>
+
+        <div class="service-item fade-up">
+          <div class="service-icon">🏭</div>
+          <h3 class="service-name">組立・設置</h3>
+          <p class="service-body">
+            部品単体の供給だけでなく、ユニットや設備の
+            組立・現場設置まで対応します。
+            測定器・産業設備の組み立て実績があります。
+          </p>
+        </div>
+
+        <div class="service-item fade-up">
+          <div class="service-icon">🏺</div>
+          <h3 class="service-name">陶芸窯OEM製造</h3>
+          <p class="service-body">
+            電気窯の筐体製造から電装・組立まで一貫してOEM対応。ニデックドライブテクノロジー（株）（旧 日本電産シンポ（株））向けを中心に、業務用・教育機関向けで納入実績があります。
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 設備一覧 -->
+  <section id="equipment">
+    <div class="section-inner">
+      <span class="section-label">Equipment</span>
+      <h2 class="section-title">主な設備</h2>
+      <p class="section-desc">
+        機械加工から板金・溶接まで、製造に必要な設備を自社で保有しています。
+      </p>
+
+      <div class="equipment-grid">
+
+        <div class="equipment-category fade-up">
+          <h3 class="equipment-cat-title">板金・加工</h3>
+          <table class="equipment-table">
+            <tr>
+              <td>レーザー加工機</td>
+              <td>アマダ FOM11 R1-3015（5×10）</td>
+              <td>1台</td>
+            </tr>
+            <tr>
+              <td>ベンダー</td>
+              <td>アマダ FaBⅢ-8020（最大2,000mm対応）</td>
+              <td>1台</td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="equipment-category fade-up">
+          <h3 class="equipment-cat-title">溶接</h3>
+          <table class="equipment-table">
+            <tr>
+              <td>TIG溶接機</td>
+              <td>DAIHEN</td>
+              <td>3台</td>
+            </tr>
+            <tr>
+              <td>半自動溶接機</td>
+              <td>DAIHEN</td>
+              <td>2台</td>
+            </tr>
+            <tr>
+              <td>半自動溶接機</td>
+              <td>Panasonic</td>
+              <td>2台</td>
+            </tr>
+            <tr>
+              <td>アーク溶接機</td>
+              <td></td>
+              <td>3台</td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="equipment-category fade-up">
+          <h3 class="equipment-cat-title">機械加工</h3>
+          <table class="equipment-table">
+            <tr>
+              <td>旋盤（長尺）</td>
+              <td>オークマ</td>
+              <td>1台</td>
+            </tr>
+            <tr>
+              <td>旋盤（汎用）</td>
+              <td>オークマ</td>
+              <td>1台</td>
+            </tr>
+            <tr>
+              <td>旋盤（半NC）</td>
+              <td>大日 DL53</td>
+              <td>1台</td>
+            </tr>
+            <tr>
+              <td>たてフライス</td>
+              <td>山崎技研</td>
+              <td>2台</td>
+            </tr>
+            <tr>
+              <td>ひざ型フライス</td>
+              <td></td>
+              <td>1台</td>
+            </tr>
+            <tr>
+              <td>ボール盤</td>
+              <td>KIRA</td>
+              <td>6台</td>
+            </tr>
+            <tr>
+              <td>ボール盤（直立）</td>
+              <td>YOSHIDA</td>
+              <td>1台</td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="equipment-category fade-up">
+          <h3 class="equipment-cat-title">研磨</h3>
+          <table class="equipment-table">
+            <tr>
+              <td>平面研磨機</td>
+              <td>400×500mm対応</td>
+              <td>1台</td>
+            </tr>
+          </table>
+        </div>
+
+      </div>
+
+      <p style="font-size:0.85rem;color:var(--color-text-sub);margin-top:32px;text-align:center;">
+        ※ 大型の曲げ加工など自社対応が難しい工程は、協力工場ネットワークを活用して対応します。
+      </p>
+    </div>
+  </section>
+
+  <!-- 実績 -->
+  <section id="cases">
+    <div class="section-inner">
+      <span class="section-label">Cases</span>
+      <h2 class="section-title">主な実績</h2>
+      <p class="section-desc">
+        守秘義務の関係から詳細はお問い合わせください。代表的な納品実績をご紹介します。
+      </p>
+
+      <div class="cases-grid">
+
+        <div class="case-card fade-up">
+          <div class="case-img-placeholder"><img src="ホームページ/画像/三菱重工.JPG" alt="大手製造業向け精密部品"></div>
+          <div class="case-content">
+            <span class="case-tag">機械加工</span>
+            <h3 class="case-title">大手製造業向け高速機械部品</h3>
+            <p class="case-body">
+              高速機械に使われる精密部品の継続製造。
+              厳しい寸法精度が求められる部品を長年安定供給しています。
+              リピート受注として現在も継続中。
+            </p>
+          </div>
+        </div>
+
+        <div class="case-card fade-up">
+          <div style="display:grid;grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr;height:220px;overflow:hidden;gap:2px;">
+            <div style="overflow:hidden;grid-row:span 2;"><img src="ホームページ/画像/ニデック製品.JPG" alt="ニデックドライブテクノロジー向け電気窯" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="overflow:hidden;"><img src="ホームページ/画像/ニデック製品2.JPG" alt="電気窯カタログ" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+            <div style="overflow:hidden;"><img src="ホームページ/画像/ニデック製品3.JPG" alt="電気窯カタログ" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+          </div>
+          <div class="case-content">
+            <span class="case-tag">板金・電装・組立</span>
+            <h3 class="case-title">電気窯OEM製造<br><span style="font-size:0.9rem;font-weight:400;">ニデックドライブテクノロジー（株）<br>（旧 日本電産シンポ（株））向け</span></h3>
+            <p class="case-body">
+              陶芸用電気窯を板金・溶接・電装・組立まで一貫して製造。業務用・教育機関向けで納入実績多数。中国向けの部品供給も継続しています。
+            </p>
+          </div>
+        </div>
+
+        <div class="case-card fade-up">
+          <div class="case-img-placeholder"><img src="ホームページ/画像/島津製作所部品.JPG" alt="精密機器メーカー向け部品"></div>
+          <div class="case-content">
+            <span class="case-tag">溶接・精密加工</span>
+            <h3 class="case-title">精密機器メーカー向け部品製造</h3>
+            <p class="case-body">
+              溶接精度と寸法管理が求められる部品を継続納品。
+              新規取引立ち上げ時の品質確立から、安定供給まで対応してきた実績があります。
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 社長メッセージ -->
+  <section id="message">
+    <div class="section-inner">
+      <span class="section-label">Message</span>
+      <h2 class="section-title">代表より</h2>
+
+      <div class="message-wrap">
+      <div class="message-photo" style="max-width:400px;width:100%;border-radius:8px;aspect-ratio:unset;height:auto;">
+          <img src="ホームページ/画像/小畑社長.jpeg" alt="代表取締役 小畑 美由紀">
+        </div>
+
+        <div class="message-body fade-up">
+          <p>
+            うちで何が作れるかを一言で言うと、「金属でできているものなら、だいたい相談に乗れる」ということです。機械加工も、板金も、溶接も、電装も、一通りやっています。だから、複数の会社に外注を回さなくても、ここ1社でまとめて対応できることが多い。それが弊社の一番の強みだと思っています。
+          </p>
+          <p>
+            「1個だけ作りたい」「急いで対応してほしい」という依頼も断りません。むしろ、そういう仕事が得意です。大量生産の仕事は海外に流れていますが、試作や小ロット、突発対応となると話は別で、そこに弊社の出番があると考えています。
+          </p>
+          <p>
+            おじいちゃんの代から始まり、三菱重工との仕事を起点に、自動車部品・繊維機械・陶芸窯と、40年以上この仕事を続けてきました。製造業が厳しい時代ですが、残って仕事を続けることが、お客様への一番の誠意だと思っています。困ったことがあれば、まず声をかけてみてください。
+          </p>
+          <div class="message-sig">
+            <div class="company">株式会社 新井製作所</div>
+            <div class="name">代表取締役 小畑 美由紀</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 会社概要 -->
+  <section id="company">
+    <div class="section-inner">
+      <span class="section-label">Company</span>
+      <h2 class="section-title">会社概要</h2>
+
+      <table class="company-table fade-up">
+        <tr>
+          <th>会社名</th>
+          <td>株式会社 新井製作所</td>
+        </tr>
+        <tr>
+          <th>所在地</th>
+          <td>〒613-0022 京都府久世郡久御山町市田鈴間108番地</td>
+        </tr>
+        <tr>
+          <th>TEL / FAX</th>
+          <td>TEL: (0774)34-1075　/ FAX: (0774)34-1076</td>
+        </tr>
+        <tr>
+          <th>メール</th>
+          <td><a href="mailto:arai.cop@fine.ocn.ne.jp" style="color:var(--color-accent)">arai.cop@fine.ocn.ne.jp</a></td>
+        </tr>
+        <tr>
+          <th>設立</th>
+          <td>昭和61年（1986年）<br><span style="color: var(--color-text-sub); font-size:0.85rem">※ 法人登記年。それ以前から事業継続</span></td>
+        </tr>
+        <tr>
+          <th>従業員数</th>
+          <td>約10名</td>
+        </tr>
+        <tr>
+          <th>主な事業</th>
+          <td>機械加工・板金・レーザー加工・溶接・電装・組立・陶芸窯OEM製造</td>
+        </tr>
+        <tr>
+          <th>主要取引先</th>
+          <td>ニデックドライブテクノロジー（株）（陶芸窯部門）、大手製造業・精密機器メーカー ほか</td>
+        </tr>
+        <tr>
+          <th>対応ロット</th>
+          <td>1個〜（試作・小ロット歓迎）</td>
+        </tr>
+        <tr>
+          <th>対応納期</th>
+          <td>要相談（特急対応あり）</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- お問い合わせ -->
+  <section id="contact">
+    <div class="contact-inner">
+      <span class="section-label" style="display:block; text-align:center">Contact</span>
+      <h2 class="section-title">お問い合わせ・見積依頼</h2>
+      <p class="section-desc">
+        図面がある場合はお送りください。ない場合もご相談ください。
+        内容を確認のうえ、担当者よりご連絡します。
+      </p>
+
+      <div style="display:flex;flex-wrap:wrap;gap:24px;justify-content:center;margin-bottom:40px;">
+        <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:6px;padding:20px 32px;text-align:center;">
+          <div style="font-size:0.78rem;color:var(--color-text-sub);letter-spacing:0.1em;margin-bottom:8px">TEL</div>
+          <a href="tel:0774341075" style="color:var(--color-accent);font-size:1.3rem;font-weight:700;text-decoration:none">(0774)34-1075</a>
+          <div style="font-size:0.75rem;color:var(--color-text-sub);margin-top:4px">平日 9:00〜17:00</div>
+        </div>
+        <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:6px;padding:20px 32px;text-align:center;">
+          <div style="font-size:0.78rem;color:var(--color-text-sub);letter-spacing:0.1em;margin-bottom:8px">MAIL</div>
+          <a href="mailto:arai.cop@fine.ocn.ne.jp" style="color:var(--color-accent);font-size:1rem;font-weight:700;text-decoration:none">arai.cop@fine.ocn.ne.jp</a>
+        </div>
+      </div>
+
+      <form class="contact-form" action="#" method="post">
+        <div class="form-row">
+          <label class="form-label">
+            会社名・お名前 <span class="required">必須</span>
+          </label>
+          <input type="text" class="form-input" placeholder="例：〇〇株式会社 山田太郎" required>
+        </div>
+        <div class="form-row">
+          <label class="form-label">
+            メールアドレス <span class="required">必須</span>
+          </label>
+          <input type="email" class="form-input" placeholder="例：info@example.co.jp" required>
+        </div>
+        <div class="form-row">
+          <label class="form-label">電話番号</label>
+          <input type="tel" class="form-input" placeholder="例：0285-○○-○○○○">
+        </div>
+        <div class="form-row">
+          <label class="form-label">
+            お問い合わせ内容 <span class="required">必須</span>
+          </label>
+          <textarea class="form-textarea" placeholder="「板金と溶接を組み合わせた部品を試作したい」「陶芸窯の修理・部品が欲しい」など、できるだけ具体的にご記入ください。" required></textarea>
+        </div>
+        <button type="submit" class="form-submit">送信する</button>
+        <p class="contact-note">
+          ※ 営業を目的としたお問い合わせはご遠慮ください。<br>
+          ※ 内容によってはお受けできない場合もございます。
+        </p>
+      </form>
+    </div>
+  </section>
+
+  <!-- フッター -->
+  <footer>
+    <div class="footer-logo">新井製作所</div>
+    <p class="footer-copy">&copy; 2024 株式会社 新井製作所. All rights reserved.</p>
+  </footer>
+
+  <!-- スクロールアニメーション -->
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // スムーズスクロール（ナビリンク）
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          const offset = 60; // nav height
+          const top = target.getBoundingClientRect().top + window.scrollY - offset;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
+
