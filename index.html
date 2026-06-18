@@ -1431,28 +1431,33 @@
         </div>
       </div>
 
-      <form class="contact-form" action="#" method="post">
+      <form class="contact-form" action="https://formsubmit.co/arai.cop@fine.ocn.ne.jp" method="POST">
+        <input type="hidden" name="_subject" value="【新井製作所サイト】お問い合わせがありました">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://araiss-kyoto.com/thanks.html">
+        <input type="text" name="_honey" style="display:none">
         <div class="form-row">
           <label class="form-label">
             会社名・お名前 <span class="required">必須</span>
           </label>
-          <input type="text" class="form-input" placeholder="例：〇〇株式会社 山田太郎" required>
+          <input type="text" name="会社名・お名前" class="form-input" placeholder="例：〇〇株式会社 山田太郎" required>
         </div>
         <div class="form-row">
           <label class="form-label">
             メールアドレス <span class="required">必須</span>
           </label>
-          <input type="email" class="form-input" placeholder="例：info@example.co.jp" required>
+          <input type="email" name="メールアドレス" class="form-input" placeholder="例：info@example.co.jp" required>
         </div>
         <div class="form-row">
           <label class="form-label">電話番号</label>
-          <input type="tel" class="form-input" placeholder="例：0285-○○-○○○○">
+          <input type="tel" name="電話番号" class="form-input" placeholder="例：0285-○○-○○○○">
         </div>
         <div class="form-row">
           <label class="form-label">
             お問い合わせ内容 <span class="required">必須</span>
           </label>
-          <textarea class="form-textarea" placeholder="「板金と溶接を組み合わせた部品を試作したい」「陶芸窯の修理・部品が欲しい」など、できるだけ具体的にご記入ください。" required></textarea>
+          <textarea name="お問い合わせ内容" class="form-textarea" placeholder="「板金と溶接を組み合わせた部品を試作したい」「陶芸窯の修理・部品が欲しい」など、できるだけ具体的にご記入ください。" required></textarea>
         </div>
         <button type="submit" class="form-submit">送信する</button>
         <p class="contact-note">
