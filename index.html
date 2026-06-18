@@ -92,7 +92,24 @@
       align-items: center;
       position: relative;
       overflow: hidden;
-      background: linear-gradient(rgba(0,0,0,0.60), rgba(0,0,0,0.60)), url('ホームページ/画像/DJI_20260318130624_0281_D.JPG') center/cover no-repeat;
+      background: var(--color-bg);
+    }
+
+    /* 背景動画 */
+    .hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background: linear-gradient(rgba(0,0,0,0.62), rgba(0,0,0,0.68));
     }
 
     /* 金属グリッド背景パターン */
@@ -100,6 +117,7 @@
       content: '';
       position: absolute;
       inset: 0;
+      z-index: 1;
       background-image:
         linear-gradient(rgba(200,168,75,0.06) 1px, transparent 1px),
         linear-gradient(90deg, rgba(200,168,75,0.06) 1px, transparent 1px);
@@ -109,7 +127,7 @@
 
     .hero-inner {
       position: relative;
-      z-index: 1;
+      z-index: 2;
       max-width: 960px;
       margin: 0 auto;
       padding: 80px 24px;
@@ -789,6 +807,66 @@
       }
     }
 
+    /* ===== 設備写真ストリップ ===== */
+    .equip-photos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+      margin-bottom: 48px;
+    }
+
+    .equip-photo {
+      position: relative;
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      border-radius: 6px;
+      border: 1px solid var(--color-border);
+    }
+
+    .equip-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .equip-photo:hover img { transform: scale(1.06); }
+
+    .equip-photo span {
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      padding: 24px 12px 9px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #fff;
+      background: linear-gradient(transparent, rgba(0,0,0,0.82));
+    }
+
+    /* ===== 製作実績ギャラリー ===== */
+    #gallery { background: var(--color-bg); }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+    }
+
+    .gallery-item {
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      border-radius: 6px;
+      border: 1px solid var(--color-border);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .gallery-item:hover img { transform: scale(1.06); }
+
     /* ===== スクロールアニメーション（軽量版） ===== */
     .fade-up {
       opacity: 0;
@@ -812,6 +890,7 @@
       <li><a href="#services">事業内容</a></li>
       <li><a href="#equipment">設備</a></li>
       <li><a href="#cases">実績</a></li>
+      <li><a href="#gallery">製作品</a></li>
       <li><a href="#company">会社概要</a></li>
       <li><a href="#contact" class="nav-cta">お問い合わせ</a></li>
     </ul>
@@ -819,6 +898,10 @@
 
   <!-- ヒーロー -->
   <section class="hero" id="top">
+    <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="assets/hero_poster.jpg">
+      <source src="assets/hero.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
     <div class="hero-inner">
       <span class="hero-label">Arai Manufacturing</span>
       <h1 class="hero-title">
@@ -1057,6 +1140,13 @@
         機械加工から板金・溶接まで、製造に必要な設備を自社で保有しています。
       </p>
 
+      <div class="equip-photos">
+        <div class="equip-photo fade-up"><img src="assets/equip-laser.jpg" alt="レーザー加工機（アマダ）" loading="lazy"><span>レーザー加工機（アマダ）</span></div>
+        <div class="equip-photo fade-up"><img src="assets/equip-lathe.jpg" alt="旋盤" loading="lazy"><span>旋盤</span></div>
+        <div class="equip-photo fade-up"><img src="assets/equip-grinder.jpg" alt="長尺旋盤" loading="lazy"><span>旋盤（長尺）</span></div>
+        <div class="equip-photo fade-up"><img src="assets/equip-drill.jpg" alt="ボール盤" loading="lazy"><span>ボール盤</span></div>
+      </div>
+
       <div class="equipment-grid">
 
         <div class="equipment-category fade-up">
@@ -1212,6 +1302,28 @@
           </div>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- 製作実績ギャラリー -->
+  <section id="gallery">
+    <div class="section-inner">
+      <span class="section-label">Products</span>
+      <h2 class="section-title">製作実績ギャラリー</h2>
+      <p class="section-desc">
+        機械加工部品から板金・溶接、装置の筐体まで。実際に製作した製品の一部をご紹介します。
+      </p>
+
+      <div class="gallery-grid">
+        <div class="gallery-item fade-up"><img src="assets/gallery-01.jpg" alt="機械加工したフランジ・ハブ部品" loading="lazy"></div>
+        <div class="gallery-item fade-up"><img src="assets/gallery-02.jpg" alt="大型の円盤・プレート部品" loading="lazy"></div>
+        <div class="gallery-item fade-up"><img src="assets/gallery-03.jpg" alt="大型の曲げブラケット（板金・溶接）" loading="lazy"></div>
+        <div class="gallery-item fade-up"><img src="assets/gallery-04.jpg" alt="曲げ加工した板金部品" loading="lazy"></div>
+        <div class="gallery-item fade-up"><img src="assets/gallery-05.jpg" alt="装置用筐体（板金・溶接）" loading="lazy"></div>
+        <div class="gallery-item fade-up"><img src="assets/gallery-06.jpg" alt="配電盤の筐体・扉" loading="lazy"></div>
+        <div class="gallery-item fade-up"><img src="assets/gallery-07.jpg" alt="電気窯用の溶接組立フレーム" loading="lazy"></div>
+        <div class="gallery-item fade-up"><img src="assets/gallery-08.jpg" alt="板金製ボックス・ダクト" loading="lazy"></div>
       </div>
     </div>
   </section>
